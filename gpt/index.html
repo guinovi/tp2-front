@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Landing page SaaS multi-tenant para gestión de centros de fitness y gimnasios." />
+    <title>FitOrbit OS | Gestión SaaS para gimnasios</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#ec4899",
+              secondary: "#06b6d4",
+              accent: "#eab308",
+              bgSpace: "#090d16",
+              textCrisp: "#f8fafc",
+              cardBg: "#131a2b"
+            },
+            fontFamily: {
+              display: ["Impact", "Haettenschweiler", "Arial Narrow Bold", "sans-serif"],
+              body: ["Trebuchet MS", "Verdana", "sans-serif"]
+            }
+          }
+        }
+      };
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="./src/main.jsx"></script>
+  </body>
+</html>

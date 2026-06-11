@@ -1,0 +1,140 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #ec4899;
+  --color-secondary: #06b6d4;
+  --color-accent: #eab308;
+  --color-bgSpace: #090d16;
+  --color-textCrisp: #f8fafc;
+  --color-cardBg: #131a2b;
+  --font-sans: 'Inter', system-ui, sans-serif;
+}
+
+/* ── Base ── */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #090d16;
+  color: #f8fafc;
+}
+
+/* ── Floating dashboard animation ── */
+@keyframes float {
+  0%   { transform: translateY(0px) rotate(-1deg); }
+  50%  { transform: translateY(-18px) rotate(1deg); }
+  100% { transform: translateY(0px) rotate(-1deg); }
+}
+.float-anim {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* ── Glow buttons ── */
+.glow-pink {
+  box-shadow: 0 0 18px 4px rgba(236,72,153,0.55), 0 0 40px 8px rgba(236,72,153,0.25);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.glow-pink:hover {
+  box-shadow: 0 0 28px 8px rgba(236,72,153,0.75), 0 0 60px 16px rgba(236,72,153,0.35);
+  transform: translateY(-2px) scale(1.03);
+}
+.glow-cyan {
+  box-shadow: 0 0 18px 4px rgba(6,182,212,0.45), 0 0 40px 8px rgba(6,182,212,0.2);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.glow-cyan:hover {
+  box-shadow: 0 0 28px 8px rgba(6,182,212,0.65), 0 0 60px 16px rgba(6,182,212,0.3);
+  transform: translateY(-2px) scale(1.03);
+}
+
+/* ── Fade-in on load ── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(32px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-in-up {
+  animation: fadeInUp 0.8s ease forwards;
+}
+.fade-delay-1 { animation-delay: 0.1s; opacity: 0; }
+.fade-delay-2 { animation-delay: 0.25s; opacity: 0; }
+.fade-delay-3 { animation-delay: 0.4s; opacity: 0; }
+.fade-delay-4 { animation-delay: 0.55s; opacity: 0; }
+
+/* ── Scroll reveal class ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Gradient text ── */
+.text-gradient {
+  background: linear-gradient(135deg, #ec4899 0%, #06b6d4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Grid glow card ── */
+.card-glow {
+  border: 1px solid rgba(6,182,212,0.15);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+.card-glow:hover {
+  border-color: rgba(6,182,212,0.5);
+  box-shadow: 0 0 24px rgba(6,182,212,0.15);
+  transform: translateY(-4px);
+}
+
+/* ── Sticky nav scroll effect ── */
+#navbar.scrolled {
+  background-color: rgba(9,13,22,0.97);
+  box-shadow: 0 2px 20px rgba(0,0,0,0.5);
+}
+
+/* ── Mesh gradient background for hero ── */
+.hero-mesh {
+  background:
+    radial-gradient(ellipse 60% 40% at 20% 50%, rgba(236,72,153,0.12) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 50% at 80% 30%, rgba(6,182,212,0.10) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 60% at 60% 80%, rgba(234,179,8,0.06) 0%, transparent 70%),
+    #090d16;
+}
+
+/* ── Dot grid overlay ── */
+.dot-grid {
+  background-image: radial-gradient(rgba(248,250,252,0.04) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* ── Neon badge ── */
+.neon-badge {
+  background: linear-gradient(135deg, rgba(234,179,8,0.15), rgba(234,179,8,0.05));
+  border: 1px solid rgba(234,179,8,0.4);
+  box-shadow: 0 0 12px rgba(234,179,8,0.2);
+}
+
+/* ── Section divider ── */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(6,182,212,0.3), rgba(236,72,153,0.3), transparent);
+}
+
+/* ── Star rating ── */
+.star {
+  color: #eab308;
+}
+
+/* ── Social icon hover ── */
+.social-icon {
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+.social-icon:hover {
+  color: #06b6d4;
+  transform: translateY(-2px);
+}

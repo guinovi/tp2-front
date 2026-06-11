@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GymOS Portal - Comparativa de Landings</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#ec4899",
+              secondary: "#06b6d4",
+              accent: "#eab308",
+              bgSpace: "#090d16",
+              textCrisp: "#f8fafc",
+              cardBg: "#131a2b"
+            },
+            fontFamily: {
+              sans: ["Outfit", "sans-serif"],
+              mono: ["Fira Code", "monospace"]
+            }
+          }
+        }
+      };
+    </script>
+    <style>
+      @keyframes float {
+        0%, 100% { transform: translateY(0px) rotate(0deg); }
+        50% { transform: translateY(-10px) rotate(1deg); }
+      }
+      @keyframes pulseGlow {
+        0%, 100% { opacity: 0.3; }
+        50% { opacity: 0.6; }
+      }
+      .animate-float {
+        animation: float 6s ease-in-out infinite;
+      }
+      .animate-glow {
+        animation: pulseGlow 4s ease-in-out infinite;
+      }
+      .neon-border-pink:hover {
+        box-shadow: 0 0 15px rgba(236, 72, 153, 0.4);
+        border-color: #ec4899;
+      }
+      .neon-border-cyan:hover {
+        box-shadow: 0 0 15px rgba(6, 182, 212, 0.4);
+        border-color: #06b6d4;
+      }
+      .neon-border-gold:hover {
+        box-shadow: 0 0 15px rgba(234, 179, 8, 0.4);
+        border-color: #eab308;
+      }
+      /* Custom Scrollbar for Code Block */
+      .custom-scrollbar::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-track {
+        background: #090d16;
+        border-radius: 8px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: #1e293b;
+        border-radius: 8px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+        background: #334155;
+      }
+    </style>
+  </head>
+  <body class="bg-[#090d16] text-[#f8fafc] min-h-screen flex flex-col justify-between font-sans selection:bg-pink-500 selection:text-white overflow-x-hidden">
+    
+    <!-- Background Glows -->
+    <div class="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] rounded-full bg-pink-500/10 blur-[120px] animate-glow pointer-events-none"></div>
+    <div class="absolute bottom-[-10%] right-[-10%] w-[50vw] h-[50vw] rounded-full bg-cyan-500/10 blur-[120px] animate-glow pointer-events-none" style="animation-delay: 2s;"></div>
+
+    <!-- Header -->
+    <header class="w-full max-w-7xl mx-auto px-6 py-6 flex justify-between items-center z-10">
+      <div class="flex items-center gap-2">
+        <span class="text-2xl font-extrabold tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500">
+          GymOS <span class="text-xs font-normal text-cyan-400 border border-cyan-400/30 px-2 py-0.5 rounded-full ml-1">Portal</span>
+        </span>
+      </div>
+      <div class="text-sm text-slate-400">
+        Trabajo Práctico 3 • TSDS 2D
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="w-full max-w-7xl mx-auto px-6 py-12 flex-grow flex flex-col items-center justify-center z-10">
+      
+      <!-- Hero Header -->
+      <div class="text-center max-w-3xl mb-16 animate-float">
+        <span class="px-3 py-1 bg-pink-500/10 text-pink-400 rounded-full text-xs font-semibold uppercase tracking-widest border border-pink-500/20 mb-4 inline-block">
+          SaaS Fitness Management
+        </span>
+        <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
+          Comparativa de Agentes <br/>
+          <span class="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 via-cyan-400 to-yellow-400">
+            Landing Page GymOS
+          </span>
+        </h1>
+        <p class="text-slate-300 text-lg md:text-xl font-light">
+          Explora los resultados del desarrollo autónomo para el sistema multi-tenant de gimnasios y centros de fitness.
+        </p>
+      </div>
+
+      <!-- Links Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-5xl">
+        
+        <!-- CARD 1: El Prompt (Abre Modal) -->
+        <button id="btnOpenModal" class="group text-left relative block bg-[#131a2b]/60 backdrop-blur-xl border border-slate-800 rounded-2xl p-8 transition-all duration-300 hover:-translate-y-2 neon-border-gold overflow-hidden cursor-pointer focus:outline-none">
+          <div class="absolute top-0 right-0 w-24 h-24 bg-yellow-500/5 rounded-full blur-2xl group-hover:bg-yellow-500/10 transition-colors"></div>
+          <div class="flex flex-col h-full justify-between gap-6">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-yellow-500/10 border border-yellow-500/20 flex items-center justify-center text-yellow-400 mb-6 group-hover:scale-110 transition-transform">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-2">Prompt Original</h3>
+              <p class="text-slate-400 text-sm leading-relaxed">
+                Visualiza el prompt de instrucciones exacto utilizado para generar las páginas, detallando el sistema de diseño, requerimientos y restricciones técnicas.
+              </p>
+            </div>
+            <div class="text-yellow-400 font-semibold flex items-center gap-2 text-sm">
+              Ver Prompt en Pantalla
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 transition-transform group-hover:translate-x-1">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+              </svg>
+            </div>
+          </div>
+        </button>
+
+        <!-- CARD 2: Sonnet Landing -->
+        <a href="/sonett/index.html" class="group relative block bg-[#131a2b]/60 backdrop-blur-xl border border-slate-800 rounded-2xl p-8 transition-all duration-300 hover:-translate-y-2 neon-border-pink overflow-hidden">
+          <div class="absolute top-0 right-0 w-24 h-24 bg-pink-500/5 rounded-full blur-2xl group-hover:bg-pink-500/10 transition-colors"></div>
+          <div class="flex flex-col h-full justify-between gap-6">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-pink-500 mb-6 group-hover:scale-110 transition-transform">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-2">Landing Sonnet</h3>
+              <p class="text-slate-400 text-sm leading-relaxed">
+                Desarrollo del Primer Agente (Claude 3.5 Sonnet). Integra React 19, Tailwind CSS v4, animaciones fluidas y carrusel interactivo infinito adaptado al sistema de diseño.
+              </p>
+            </div>
+            <div class="text-pink-500 font-semibold flex items-center gap-2 text-sm">
+              Explorar Versión Sonnet
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 transition-transform group-hover:translate-x-1">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+              </svg>
+            </div>
+          </div>
+        </a>
+
+        <!-- CARD 3: GPT Landing -->
+        <a href="/gpt/index.html" class="group relative block bg-[#131a2b]/60 backdrop-blur-xl border border-slate-800 rounded-2xl p-8 transition-all duration-300 hover:-translate-y-2 neon-border-cyan overflow-hidden">
+          <div class="absolute top-0 right-0 w-24 h-24 bg-cyan-500/5 rounded-full blur-2xl group-hover:bg-cyan-500/10 transition-colors"></div>
+          <div class="flex flex-col h-full justify-between gap-6">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 mb-6 group-hover:scale-110 transition-transform">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 21l8.904-4.473L21 21v-6h-5.187z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h8v8H3zM13 3h8v8h-8zM3 13h8v8H3z" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-2">Landing GPT</h3>
+              <p class="text-slate-400 text-sm leading-relaxed">
+                Desarrollo del Segundo Agente (GPT). Implementado en React y estilizado con animaciones personalizadas mediante clases utilitarias y estilos customizados.
+              </p>
+            </div>
+            <div class="text-cyan-400 font-semibold flex items-center gap-2 text-sm">
+              Explorar Versión GPT
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 transition-transform group-hover:translate-x-1">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+              </svg>
+            </div>
+          </div>
+        </a>
+
+      </div>
+    </main>
+
+    <!-- Modal for Prompt -->
+    <div id="promptModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md transition-all duration-300">
+      <div class="relative w-full max-w-4xl bg-[#131a2b] border border-slate-800 rounded-2xl shadow-2xl flex flex-col max-h-[85vh] overflow-hidden" onclick="event.stopPropagation()">
+        
+        <!-- Modal Header -->
+        <div class="flex items-center justify-between px-6 py-4 border-b border-slate-800 bg-[#090d16]/50">
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-lg bg-yellow-500/10 border border-yellow-500/20 flex items-center justify-center text-yellow-400">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold text-white">Prompt de Instrucciones Original</h3>
+          </div>
+          <div class="flex items-center gap-2">
+            <!-- Copy Button -->
+            <button id="btnCopyPrompt" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-slate-200 flex items-center gap-1.5 transition-colors border border-slate-700 focus:outline-none cursor-pointer">
+              <svg id="copyIcon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 0 1-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 0 1 1.5.124m7.5 10.376A8.965 8.965 0 0 0 12 12.75a8.965 8.965 0 0 0-3.75 4.5m8.25 0h.008v.008H17.25v-.008Zm0-3h.008v.008H17.25v-.008Zm0-3h.008v.008H17.25v-.008ZM15.75 6.75h.008v.008H15.75V6.75Zm0-3h.008v.008H15.75V3.75Z" />
+              </svg>
+              <span id="copyText">Copiar</span>
+            </button>
+            <!-- Close Button -->
+            <button id="btnCloseModal" class="p-1.5 rounded-lg hover:bg-slate-800 text-slate-400 hover:text-white transition-colors cursor-pointer focus:outline-none">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Modal Body -->
+        <div class="p-6 overflow-y-auto custom-scrollbar bg-[#090d16]/30 flex-grow">
+          <pre id="promptContent" class="text-xs md:text-sm font-mono text-slate-300 leading-relaxed whitespace-pre-wrap select-all">Actúa como un Desarrollador Frontend Senior experto en UI/UX, especializado en conversiones SaaS y Tailwind CSS avanzado.
+
+&lt;task&gt;
+Tu objetivo es desarrollar el código completo, funcional y en un solo archivo (HTML5) para la Landing Page de un sistema SaaS multi-tenant diseñado para la gestión de centros de fitness y gimnasios. 
+&lt;/task&gt;
+
+&lt;design_system&gt;
+Debes aplicar estrictamente el siguiente esquema de colores usando valores arbitrarios de Tailwind (ej. `bg-[#090d16]` o definiéndolos en la configuración de Tailwind en el script):
+- primary: "#ec4899" (Cyber neon pink - usar para CTAs principales y acentos fuertes)
+- secondary: "#06b6d4" (Neon cyan - usar para iconos, bordes activos y hover states)
+- accent: "#eab308" (Volt gold - usar para insignias, estrellas de reseñas o alertas)
+- bgSpace: "#090d16" (Ultra dark space - usar como color de fondo principal de la página)
+- textCrisp: "#f8fafc" (Crisp text - usar para párrafos y encabezados generales)
+- cardBg: "#131a2b" (Card dark navy - usar para fondos de tarjetas, formularios y secciones destacadas)
+&lt;/design_system&gt;
+
+&lt;requirements&gt;
+La Landing Page debe contener las siguientes secciones semánticas en este orden exacto:
+1. Header: Barra de navegación pegajosa (sticky) con el logo a la izquierda, enlaces al centro y un botón CTA "Probar Gratis" a la derecha.
+2. Hero Section: Título principal de alto impacto orientado a dueños de gimnasios, subtítulo descriptivo, CTA dual ("Comenzar ahora" y "Ver Demo") y una representación visual del software (puede ser un contenedor estilizado que simule un dashboard).
+3. About Us / Contexto: Breve sección explicando la misión de modernizar la gestión deportiva.
+4. Características (Features): Un grid de al menos 3x2 tarjetas que destaquen módulos clave (ej. gestión de miembros, facturación recurrente, reservas de clases, métricas en tiempo real).
+5. Testimonios: Carrusel o grid (min 3) de reseñas de clientes con estilo tarjeta.
+6. Formulario de Contacto: Un formulario maquetado visualmente (nombre, gimnasio, email, mensaje, botón de envío) dentro de un contenedor tipo tarjeta.
+7. Footer: Enlaces rápidos, copyright y enlaces simulados a redes sociales.
+&lt;/requirements>
+
+&lt;technical_constraints&gt;
+1. Cero dependencias locales: Utiliza Tailwind CSS a través de su script CDN oficial (`&lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;`).
+2. Interactividad y Animaciones: 
+   - Utiliza clases nativas de Tailwind para hover, focus y transiciones (`transition-all`, `hover:scale-105`, `duration-300`).
+   - Incluye un bloque `&lt;style&gt;` en el `&lt;head&gt;` con animaciones CSS personalizadas (`@keyframes` para flotación suave del dashboard en el Hero, efectos de "glow" (resplandor) en botones usando `box-shadow` con los colores neón, y fade-in al hacer scroll usando animación simple on-load).
+3. Completitud Estricta: NO omitas código. Está estrictamente prohibido usar marcadores de posición como "&lt;!-- resto del código --&gt;" o "/* CSS goes here */". El archivo generado debe poder renderizarse perfectamente al abrirlo en el navegador.
+4. Accesibilidad y Responsividad: Asegúrate de usar la directiva `md:` y `lg:` de Tailwind para garantizar que el diseño cambie correctamente de móvil (1 columna) a desktop (multiespacio).
+&lt;/technical_constraints&gt;
+
+&lt;output_format&gt;
+Devuelve ÚNICAMENTE el código HTML dentro de un solo bloque de código. No incluyas explicaciones iniciales ni conclusiones. Tu respuesta debe empezar con `&lt;!DOCTYPE html&gt;` y terminar con `&lt;/html&gt;`.
+&lt;/output_format&gt;</pre>
+        </div>
+
+        <!-- Modal Footer -->
+        <div class="px-6 py-4 border-t border-slate-800 bg-[#090d16]/50 flex justify-end">
+          <button id="btnCloseModalFooter" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-sm font-semibold text-white transition-colors cursor-pointer focus:outline-none">
+            Cerrar
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="w-full max-w-7xl mx-auto px-6 py-8 border-t border-slate-800/60 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500 z-10">
+      <div>
+        &copy; 2026 GymOS. Desarrollado de forma autónoma con Agentes de IA.
+      </div>
+      <div class="flex gap-4">
+        <span>React 19</span>
+        <span>Vite Multi-page</span>
+        <span>Tailwind CSS v4</span>
+      </div>
+    </footer>
+
+    <!-- Interactive JS -->
+    <script>
+      const modal = document.getElementById('promptModal');
+      const btnOpen = document.getElementById('btnOpenModal');
+      const btnClose = document.getElementById('btnCloseModal');
+      const btnCloseFooter = document.getElementById('btnCloseModalFooter');
+      const btnCopy = document.getElementById('btnCopyPrompt');
+      const copyText = document.getElementById('copyText');
+      const promptContent = document.getElementById('promptContent');
+
+      // Open Modal
+      btnOpen.addEventListener('click', () => {
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        document.body.classList.add('overflow-hidden');
+      });
+
+      // Close Modal Function
+      const closeModal = () => {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        document.body.classList.remove('overflow-hidden');
+      };
+
+      btnClose.addEventListener('click', closeModal);
+      btnCloseFooter.addEventListener('click', closeModal);
+      modal.addEventListener('click', closeModal);
+
+      // ESC key closes modal
+      window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+          closeModal();
+        }
+      });
+
+      // Copy to clipboard
+      btnCopy.addEventListener('click', () => {
+        const text = promptContent.textContent;
+        navigator.clipboard.writeText(text).then(() => {
+          copyText.textContent = '¡Copiado!';
+          btnCopy.classList.remove('bg-slate-800', 'border-slate-700');
+          btnCopy.classList.add('bg-green-600/20', 'border-green-500/40', 'text-green-400');
+          
+          setTimeout(() => {
+            copyText.textContent = 'Copiar';
+            btnCopy.classList.add('bg-slate-800', 'border-slate-700');
+            btnCopy.classList.remove('bg-green-600/20', 'border-green-500/40', 'text-green-400');
+          }, 2000);
+        }).catch(err => {
+          console.error('Error al copiar: ', err);
+        });
+      });
+    </script>
+
+  </body>
+</html>
