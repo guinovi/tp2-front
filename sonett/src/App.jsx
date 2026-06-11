@@ -245,6 +245,12 @@ export default function App() {
 
             {/* CTA + Mobile menu button */}
             <div className="flex items-center gap-3">
+              <a href="/" className="border border-secondary/40 text-secondary hover:bg-secondary/15 text-sm font-semibold px-4 py-2.5 rounded-full transition-all duration-300 flex items-center gap-1.5">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" className="w-4 h-4">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+                </svg>
+                Volver
+              </a>
               <a href="#contacto" className="glow-pink bg-primary text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-all duration-300 hidden sm:inline-flex">
                 Probar Gratis
               </a>
@@ -277,7 +283,13 @@ export default function App() {
                 <li><a href="#nosotros" onClick={() => setIsMobileMenuOpen(false)} className="block px-3 py-2 rounded-lg text-textCrisp/80 hover:bg-white/5 hover:text-secondary transition-all duration-200 text-sm font-medium">Nosotros</a></li>
                 <li><a href="#testimonios" onClick={() => setIsMobileMenuOpen(false)} className="block px-3 py-2 rounded-lg text-textCrisp/80 hover:bg-white/5 hover:text-secondary transition-all duration-200 text-sm font-medium">Testimonios</a></li>
                 <li><a href="#contacto" onClick={() => setIsMobileMenuOpen(false)} className="block px-3 py-2 rounded-lg text-textCrisp/80 hover:bg-white/5 hover:text-secondary transition-all duration-200 text-sm font-medium">Contacto</a></li>
-                <li className="pt-2">
+                <li className="pt-2 flex flex-col gap-2">
+                  <a href="/" className="border border-secondary/40 text-secondary hover:bg-secondary/15 text-sm font-semibold px-4 py-2.5 rounded-full text-center transition-all duration-300 flex items-center justify-center gap-1.5">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" className="w-4 h-4">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+                    </svg>
+                    Volver al Menú
+                  </a>
                   <a href="#contacto" onClick={() => setIsMobileMenuOpen(false)} className="glow-pink bg-primary text-white text-sm font-semibold px-5 py-2.5 rounded-full block text-center transition-all duration-300">Probar Gratis</a>
                 </li>
               </ul>
