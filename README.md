@@ -80,3 +80,21 @@ Versión modular estructurada en componentes y animada mediante clases utilitari
 * **Vite**: Configuración multi-página en la raíz (`vite.config.js`) que procesa múltiples puntos de entrada de forma optimizada.
 * **Tailwind CSS (v4 y CDN)**: Integración mixta que demuestra el uso de Tailwind a través de su CDN nativo y a través de bundles de Vite.
 * **CSS Custom Animations**: Keyframes para floats, pulse glows y transitions nativas de Tailwind CSS.
+
+---
+
+## 🧠 Skills Utilizados y Correcciones
+
+### 🔸 Skills del Agente Sonnet (Primer Agente)
+* **`cognitive-doc-design`**: Aplicado para estructurar la documentación técnica inicial y facilitar la comprensión del desarrollo.
+* **`comment-writer`**: Utilizado para agregar comentarios descriptivos y profesionales en los bloques críticos del código interactivo.
+* **`work-unit-commits`**: Aplicado conceptualmente para planificar y estructurar las subidas en commits incrementales y atómicos.
+
+### 🔸 Skills del Agente GPT (Segundo Agente)
+* **`frontend-design`**: Usado para estructurar la UI y modularizar los componentes principales del SaaS de forma ágil y responsive.
+* **`cognitive-doc-design`**: Utilizado para simplificar y resumir la descripción de las tecnologías asociadas.
+
+---
+
+## 🛠️ Ajustes y Correcciones en la Versión de Sonnet
+Al finalizar el prototipo de la versión de **Sonnet**, se detectó la necesidad de optimizar el **Carrusel de Testimonios**. Se le aplicó una corrección en el algoritmo matemático del carrusel para lograr una rotación infinita suave: se triplicó el array de testimonios en memoria y se agregaron resets imperativos usando `requestAnimationFrame` en el evento `onTransitionEnd`, solucionando parpadeos gráficos del DOM y garantizando una transición fluida (loop infinito virtual).
